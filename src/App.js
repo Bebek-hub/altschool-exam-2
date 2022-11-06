@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./App.css";
-// import AppRouter from "./routes/index";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -9,8 +8,27 @@ import ContactUs from "./pages/ContactUs";
 import ErrorPage from "./pages/ErrorPage";
 import User from "./pages/User";
 import Profile from "./pages/Profile";
-import ErrorFallback from "./ErrorFallback";
+import ErrorApp from "./ErrorApp";
 import { ErrorBoundary } from "react-error-boundary";
+
+
+const AppRouter = () => {
+  return (
+    <Routes>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/user" element={<User />}>
+            <Route index element={<Profile />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Route>
+          <Route path="error" element={<ErrorApp />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+  )
+}
 
 const CustomNavLink = ({ to, ...props }) => {
   let activeStyle = {
@@ -22,7 +40,7 @@ const CustomNavLink = ({ to, ...props }) => {
   return (
     <NavLink
       style={({ isActive }) =>
-        isActive ? activeStyle : { textDecoration: "none", color: "blue" }
+        isActive ? activeStyle : { textDecoration: "none", color: "#c1c1e6" }
       }
       to={to}
       end
@@ -43,29 +61,24 @@ function Layout() {
   );
 }
 
+function ErrorFallback({error}) {
+  return (
+    <ErrorApp error={error} />
+  )
+}
+
 function App() {
-  // eslint-disable-next-line no-unused-vars
-  const [isActive, setIsActive] = useState(false);
+ 
+  const [explode, setExplode] = useState(false);
 
   return (
     <div className="App">
-      <ErrorBoundary fallbackComponent={ErrorFallback}>
+      <ErrorBoundary fallbackComponent={ErrorFallback} onReset={() => setExplode(false) } resetKeys={[explode]}> 
+      {explode? <ErrorApp />: null}
         <Layout />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/user" element={<User />}>
-            <Route index element={<Profile />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Route>
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-        ;{/* <Layout  /> */}
-        {/* <Outlet /> */}
-        {/* <AppRouter /> */}
+        <AppRouter />
+        <button onClick={() => setExplode(true)}> toggle explode</button>
+        <button onClick={() => setExplode(false)}>Go back</button>
       </ErrorBoundary>
     </div>
   );

@@ -3,8 +3,8 @@ import React from 'react'
 const About = () => {
   return (
     <div>
-      <h1> About</h1>
-      <p>Lorem</p>
+      <h2> About</h2>
+      <p>Welcome users</p>
     </div>
   )
 }
