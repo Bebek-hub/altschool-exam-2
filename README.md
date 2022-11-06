@@ -1,3 +1,11 @@
+# Task 3
+Setup react-router, implement Nested routes, 404 page, and Error boundary. Set up fake userAuthContext using the context API to always carry out a fake authentication, bonus - extract out a custom hook to get the currently logged-in user. Implement SEO and Navigation menu that will show on each page.
+
+Hosted site: Netlify
+hosted link:  https://altschool-exam2.netlify.app/
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -70,4 +78,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-Deployed link using netlify: https://altschool-exam2.netlify.app/
+
