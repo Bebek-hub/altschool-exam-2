@@ -7,7 +7,7 @@ const User = () => {
         <h1> I am the user page.</h1>
 
       <nav>
-      <Link to="/profile">Profile</Link>
+      <Link to="/profile">I am a nested page</Link>
       </nav>
 
       <Outlet />
