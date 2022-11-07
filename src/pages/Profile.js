@@ -3,7 +3,7 @@
 const Profile = () => {
     // let navigate = useNavigate(); 
   return (
-    <div>
+    <div className='generalStyle'>
         <h1> Profile</h1>
         <p> The Profile page</p>
         {/* <button onClick={() => {

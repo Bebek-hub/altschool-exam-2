@@ -3,11 +3,11 @@ import { Link, Outlet } from "react-router-dom";
 
 const User = () => {
   return (
-      <div>
+      <div className='generalStyle'>
         <h1> I am the user page.</h1>
 
       <nav>
-      <Link to="/profile">I am a nested page</Link>
+      <Link to="/profile">Profile page</Link>
       </nav>
 
       <Outlet />

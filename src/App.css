@@ -1,12 +1,26 @@
+.generalStyle {
+  text-align: center;
+}
 
 .login-container{
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #fff;
-  height: calc(100vh - 70px);
   padding-left: 5%;
   padding-right: 5%;
   margin-top: 70px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: 70%;
+  width: 45%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .login-container .container {
@@ -25,25 +39,28 @@
   align-self: center;
 }
 input[type="text"], input[type="password"]{
-  padding-left: 1px;
-  padding-right: 1px;
-  height: 40px;
+  padding: 10px 5px;
+  margin-top: 5px;
   border-radius: 5px;
   border: .5px solid #c1c1e6;
   font-size: 15px;
 }
 label{
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
 }
 .login-container button{
-  height: 40px;
+  padding: 10px 5px;
   font-weight: bold;
   font-size: 15px;
   background-color: #03034e;
   color: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin: 25px 0 40px;
 }
 .login-container button:hover{
+  color: #03034e;
   background-color: transparent;
   border: 1px solid #03034e;
   cursor: pointer;
@@ -62,46 +79,67 @@ label{
     justify-content: center;
     background-image: none;
   }
+
+  .card {
+    width: 80%;
+    align-self: center;
+  }
+  
+}
+
+@media screen and (max-width: 350px){
+  .card {
+    width: 100%;
+  }
   
 }
 
 
 #navigation{
   width: 100%;
-  position: fixed;
-  z-index: 10;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #03034e;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   height: 70px;
-  top: 0;
   padding-right: 5px;
   padding-left: 5px;
 }
 #navigation h1{
   color: white;
 }
-#navigation button{
-  background-color: transparent;
-  border: none;
-  align-self: center;
-}
-#navigation button:hover{
-  cursor: pointer;
-}
-#navigation button:focus{
-  outline: none;
-}
 
-.home {
-  margin-top: 100px;
-  margin-left: 2%;
-  margin-right: 2%;
+.customLink {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
 }
 
+.errorButn {
+  padding: 10px 10px;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #03034e;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin: 25px 0 40px;
+  border: 1px solid #03034e;
+}
 
+.errorButn:hover{
+  color: #03034e;
+  background-color: transparent;
+  border: 1px solid #03034e;
+  cursor: pointer;
+}
+
+.errorDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

@@ -27,10 +27,12 @@ const Header = () => {
       <h1 href="#" className="logo">
         OGF
       </h1>
-      <CustomNavLink to="/home">Home</CustomNavLink>
-      <CustomNavLink to="/about">About</CustomNavLink>
-      <CustomNavLink to="/user">User</CustomNavLink>
-      <CustomNavLink to="/login">Login</CustomNavLink>
+      <div className="customLink">
+        <CustomNavLink to="/home">Home</CustomNavLink>
+        <CustomNavLink to="/about">About</CustomNavLink>
+        <CustomNavLink to="/user">User</CustomNavLink>
+        <CustomNavLink to="/login">Login</CustomNavLink>
+      </div>
     </nav>
   );
 };
