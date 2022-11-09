@@ -97,9 +97,8 @@ label{
 
 #navigation{
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: block;
+  padding-bottom: 15px;
   background-color: #03034e;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   height: 70px;
