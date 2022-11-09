@@ -33,64 +33,30 @@ function ErrorFallback({ error }) {
   return <ErrorApp error={error} />;
 }
 
-// const Context = React.createContext();
-
-// export const AuthContext = React.createContext();
-// const initialState = {
-//   isAuthenticated: false,
-//   user: null,
-//   token: null,
-// };
-// const reducer = (state, action) => {
-//   switch (action.type) {
-//     case "LOGIN":
-//       localStorage.setItem("user", JSON.stringify(action.payload.user));
-//       localStorage.setItem("token", JSON.stringify(action.payload.token));
-//       return {
-//         ...state,
-//         isAuthenticated: true,
-//         user: action.payload.user,
-//         token: action.payload.token
-//       };
-//     case "LOGOUT":
-//       localStorage.clear();
-//       return {
-//         ...state,
-//         isAuthenticated: false,
-//         user: null,
-//         token:  null,
-//       };
-//     default:
-//       return state;
-//   }
-// };
-
 function App() {
-  // const [state, dispatch] = React.useReducer(reducer, initialState);
   const [explode, setExplode] = useState(false);
 
   return (
-    // <Context.Provider value={{
-    //   token,
-    //   handleInputChange,
-    //   handleFormSubmit
-    // }}>
-    //   <Header />
-      <div className="App">
-        <ErrorBoundary
-          fallbackComponent={ErrorFallback}
-          onReset={() => setExplode(false)}
-          resetKeys={[explode]}
-        >
-          {explode ? <ErrorApp /> : null}
-          <AppRouter />
-          <Header />
-          <div className="errorDiv">
-          <button onClick={() => setExplode(true)} className="errorButn"> toggle explode</button>
-          <button onClick={() => setExplode(false)} className="errorButn">Go back</button>
-          </div>
-        </ErrorBoundary>
-      </div>
+    <div className="App">
+      <ErrorBoundary
+        fallbackComponent={ErrorFallback}
+        onReset={() => setExplode(false)}
+        resetKeys={[explode]}
+      >
+        {explode ? <ErrorApp /> : null}
+        <Header />
+        <AppRouter />
+        <div className="errorDiv">
+          <button onClick={() => setExplode(true)} className="errorButn">
+            {" "}
+            toggle explode
+          </button>
+          <button onClick={() => setExplode(false)} className="errorButn">
+            Go back
+          </button>
+        </div>
+      </ErrorBoundary>
+    </div>
   );
 }
 
