@@ -1,5 +1,5 @@
 import * as React from "react"
-// import { ErrorBoundary } from "react-error-boundary";
+
 
 const ErrorApp = ({ error }) => {
   return (
